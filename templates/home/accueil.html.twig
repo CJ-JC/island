@@ -1,9 +1,30 @@
 {% extends "base.html.twig" %}
 {% block body %}
-	{% include "navbar/navbar.html.twig" %}
 	<div class="gtco-loader"></div>
 
 	<div id="page">
+		<nav class="gtco-nav" role="navigation" id="navbar">
+			<div class="gtco-container">
+				<div class="row" style="display: flex;align-items: center;">
+					<div class="col-sm-4 col-xs-12">
+						<div id="gtco-logo">
+							<a href="{{path('home_page')}}">
+								<img src="{{asset('images/logo.png')}}" alt="logo" style="width: 35%;">
+							</a>
+						</div>
+					</div>
+					<div class="col-xs-8 text-right menu-1">
+						<ul>
+							<li><a href="#menu">La carte</a></li>
+							<li><a href="#services">Services</a></li>
+							<li><a href="#contact">Contact</a></li>
+							<li><a href="#">Reservation</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<!-- Home section -->
 		<header id="gtco-header" class="gtco-cover gtco-cover-md" role="banner" style="background-image: url(images/img_bg_1.jpg)" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
 			<div class="gtco-container">
@@ -67,7 +88,7 @@
 			</div>
 		</header>
 
-		<div class="gtco-section">
+		<div class="gtco-section" id="menu">
 			<div class="gtco-container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center gtco-heading">
@@ -80,7 +101,7 @@
 						<a href="{{ asset('images/img_1.jpg')}}" class="fh5co-card-item image-popup">
 							<figure>
 								<div class="overlay">
-									<i class="ti-plus"></i>
+									<i class="fas fa-plus"></i>
 								</div>
 								<img src="{{ asset('images/img_1.jpg')}}" alt="Image" class="img-responsive">
 							</figure>
@@ -183,7 +204,7 @@
 			</div>
 		</div>
 
-		<div id="gtco-features">
+		<div class="gtco-features" id="services">
 			<div class="gtco-container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
@@ -195,7 +216,7 @@
 					<div class="col-md-4 col-sm-6">
 						<div class="feature-center animate-box" data-animate-effect="fadeIn">
 							<span class="icon">
-								<i class="ti-face-smile"></i>
+								<i class="far fa-smile"></i>
 							</span>
 							<h3>Happy People</h3>
 							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
@@ -204,7 +225,7 @@
 					<div class="col-md-4 col-sm-6">
 						<div class="feature-center animate-box" data-animate-effect="fadeIn">
 							<span class="icon">
-								<i class="ti-thought"></i>
+								<i class="fas fa-lightbulb"></i>
 							</span>
 							<h3>Creative Culinary</h3>
 							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
@@ -213,18 +234,15 @@
 					<div class="col-md-4 col-sm-6">
 						<div class="feature-center animate-box" data-animate-effect="fadeIn">
 							<span class="icon">
-								<i class="ti-truck"></i>
+								<i class="fas fa-truck"></i>
 							</span>
 							<h3>Food Delivery</h3>
 							<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
 						</div>
 					</div>
-
-
 				</div>
 			</div>
 		</div>
-
 
 		<div class="gtco-cover gtco-cover-sm" style="background-image: url(images/img_bg_1.jpg)" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
@@ -240,21 +258,17 @@
 
 		<div id="gtco-counter" class="gtco-section">
 			<div class="gtco-container">
-
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
 						<h2 class="cursive-font primary-color">Fun Facts</h2>
 						<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
 					</div>
 				</div>
-
 				<div class="row">
-
 					<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
 						<div class="feature-center">
 							<span class="counter js-counter" data-from="0" data-to="5" data-speed="5000" data-refresh-interval="50">1</span>
 							<span class="counter-label">Avg. Rating</span>
-
 						</div>
 					</div>
 					<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInUp">
@@ -273,15 +287,11 @@
 						<div class="feature-center">
 							<span class="counter js-counter" data-from="0" data-to="1985" data-speed="5000" data-refresh-interval="50">1</span>
 							<span class="counter-label">Year Started</span>
-
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
-
-
 		<div id="gtco-subscribe">
 			<div class="gtco-container">
 				<div class="row animate-box">
@@ -312,26 +322,19 @@
 			<div class="overlay"></div>
 			<div class="gtco-container">
 				<div class="row row-pb-md">
-
-
 					<div class="col-md-12 text-center">
 						<div class="gtco-widget">
 							<h3>Get In Touch</h3>
 							<ul class="gtco-quick-contact">
 								<li>
 									<a href="#">
-										<i class="icon-phone"></i>
+										<i class="fas fa-phone"></i>
 										+1 234 567 890</a>
 								</li>
 								<li>
 									<a href="#">
-										<i class="icon-mail2"></i>
+										<i class="fas fa-at"></i>
 										info@GetTemplates.co</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="icon-chat"></i>
-										Live Chat</a>
 								</li>
 							</ul>
 						</div>
@@ -340,22 +343,22 @@
 							<ul class="gtco-social-icons">
 								<li>
 									<a href="#">
-										<i class="icon-twitter"></i>
+										<i class="fab fa-snapchat"></i>
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<i class="icon-facebook"></i>
+										<i class="fab fa-instagram"></i>
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<i class="icon-linkedin"></i>
+										<i class="fab fa-twitter"></i>
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<i class="icon-dribbble"></i>
+										<i class="fab fa-facebook-f"></i>
 									</a>
 								</li>
 							</ul>
@@ -372,12 +375,8 @@
 							</small>
 						</p>
 					</div>
-
 				</div>
-
-
 			</div>
 		</footer>
-
 	</div>
 {% endblock  %}

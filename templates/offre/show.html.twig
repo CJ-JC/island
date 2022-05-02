@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Offre
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1>Offre</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Id</th>
+					<th scope="col">Titre</th>
+					<th scope="col">Description</th>
+					<th scope="col">Prix</th>
+					<th scope="col">Image</th>
+					<th scope="col">Détails</th>
+					<th scope="col">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">{{ offre.id }}</th>
+					<td>{{ offre.titre }}</td>
+					<td>{{ offre.description }}</td>
+					<td>{{ offre.prix }}</td>
+					{% for image in offre.images %}
+						<td>
+							<img src="{{ asset('/uploads/'~image.name) }}" alt="image" width="100">
+						</td>
+					{% endfor %}
+					<td>
+						<a href="{{ path('app_offre_edit', {'id': offre.id}) }}" class="btn btn-warning">Modifier</a>
+
+					</td>
+					<td>
+						{{ include('offre/_delete_form.html.twig') }}
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<a href="{{ path('app_offre_index') }}" class="btn" style="background-color: #aaa; color: #fff;">Revenir</a>
+
+	{% endblock %}

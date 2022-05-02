@@ -1,0 +1,40 @@
+{% include "base.html.twig" %}
+
+
+{# {{ form_widget(form) }} #}
+{% block body %}
+	<div class="container">
+		{{ form_start(form) }}
+		<div class="mb-3">
+			{{ form_row(form.titre) }}
+		</div>
+		<div class="mb-3">
+			{{ form_row(form.description) }}
+		</div>
+		<div class="mb-3">
+			{{ form_row(form.prix) }}
+		</div>
+		<div class="mb-3">
+			{{ form_row(form.images) }}
+		</div>
+		{# Si la route est "offre_edit on affiche les images #}
+		{% if app.request.attributes.get('_route') == 'app_offre_edit' %}
+			<h2>Images</h2>
+			{% for image in offre.images %}
+				<div class="mb-3">
+					<img
+					src="{{ asset('/uploads/'~image.name) }}" alt="image" width="150" class="rounded mx-auto d-block">
+				{# On ajoute un lien permettant de supprimer une image (sera géré en Ajax) #}
+				</div>
+				<div class="mb-3">
+					<a href="{{ path('offre_delete_image', {id: image.id})}}" data-delete data-token="{{ csrf_token('delete' ~ image.id )}}" class="btn btn-danger">Supprimer l'image</a>
+					<button type="submit" class="btn btn-primary">Modifier</button>
+				</div>
+			{% endfor %}
+		{% endif %}
+		<div class="text-center">
+			<button class="btn">{{ button_label|default('Save') }}</button>
+		</div>
+		{{ form_end(form) }}
+	</div>
+{% endblock %}
