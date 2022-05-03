@@ -300,15 +300,6 @@
     parallax();
   });
 
-  window.addEventListener("scroll", () => {
-    let navbar = document.querySelector(".gtco-nav");
-
-    if (window.scrollY > 190) {
-      navbar.classList.add("navbarScroll");
-    } else {
-      navbar.classList.remove("navbarScroll");
-    }
-  });
   //   slider
   $("#slideshow > div:gt(0)").hide();
 
@@ -321,3 +312,20 @@
       .appendTo("#slideshow");
   }, 3000);
 })();
+
+window.addEventListener("scroll", () => {
+  let navbar = document.querySelector(".gtco-nav");
+  let liste = document.querySelectorAll(".nav-link");
+
+  if (window.scrollY > 190) {
+    navbar.classList.add("navbarScroll");
+    for (const iterator of liste) {
+      iterator.classList.add("nav-color");
+    }
+  } else {
+    navbar.classList.remove("navbarScroll");
+    for (const iterator of liste) {
+      iterator.classList.remove("nav-color");
+    }
+  }
+});

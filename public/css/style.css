@@ -162,11 +162,20 @@ figure {
   font-size: 16px;
   text-transform: uppercase;
   padding: 30px 10px;
-  color: #000;
+  color: #fff;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
 }
+
+.nav-color {
+  color: #1a1a1a !important;
+}
+
+.nav-color:hover {
+  color: #fff !important;
+}
+
 .gtco-nav ul li a:hover,
 .gtco-nav ul li a:focus,
 .gtco-nav ul li a:active {
@@ -297,6 +306,7 @@ figure {
   background: rgba(255, 255, 255, 0.5);
   color: #1a1a1a;
 }
+
 #gtco-header .form-wrap .tab-menu li a:hover {
   color: #1a1a1a;
 }
@@ -427,8 +437,10 @@ figure {
   top: 0;
   width: 130%;
   height: 95%;
-  background: linear-gradient(rgba(17, 26, 43, 0.7), rgba(17, 26, 43, 0.7)),
-    url('../images/cook.jpg') center top no-repeat;
+  /* background: linear-gradient(rgba(17, 26, 43, 0.7), rgba(17, 26, 43, 0.7)),
+    url('../images/cook.jpg') center top no-repeat; */
+  background-image: url('../images/cook.jpg');
+  filter: brightness(0.5);
   z-index: 0;
   border-radius: 0 0 50% 50%;
   transform: translateX(-50%) rotate(0deg);
@@ -471,7 +483,9 @@ figure {
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.5);
+  /* background: linear-gradient(rgba(40, 58, 90, 0.7), rgba(40, 58, 90, 0.7)); */
 }
+
 .gtco-cover > .gtco-container {
   position: relative;
   z-index: 10;
@@ -503,13 +517,14 @@ figure {
   background-size: cover;
 }
 
-video {
+.gtco-cover-sm video {
   object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
+  filter: brightness(0.7);
 }
 
 @media screen and (max-width: 768px) {
