@@ -156,14 +156,13 @@ label {
   border-top: 0;
   border-left: 0;
   border-right: 0;
-  border-bottom: 1px solid crimson;
 }
 .field input:focus {
   outline: none !important;
 }
 
 .field input:hover {
-  border-bottom: 1px solid rgb(84 105 212 / 0.5);
+  border-bottom: 2px solid rgb(84 105 212 / 0.5);
 }
 
 input[type='submit'] {

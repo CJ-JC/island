@@ -30,7 +30,7 @@
 						</td>
 					{% endfor %}
 					<td>
-						<a href="{{ path('app_offre_edit', {'id': offre.id}) }}" class="btn btn-warning">Modifier</a>
+						<a href="{{ path('admin_app_offre_edit', {'id': offre.id}) }}" class="btn btn-warning">Modifier</a>
 
 					</td>
 					<td>
@@ -39,6 +39,6 @@
 				</tr>
 			</tbody>
 		</table>
-		<a href="{{ path('app_offre_index') }}" class="btn" style="background-color: #aaa; color: #fff;">Revenir</a>
+		<a href="{{ path('admin_app_offre_index') }}" class="btn" style="background-color: #aaa; color: #fff;">Revenir</a>
 
 	{% endblock %}

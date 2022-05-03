@@ -54,14 +54,14 @@ html {
   content: '';
 }
 
-a {
+nav .gtco-nav a {
   color: #fbb448;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 a:hover,
-a:active,
+/* a:active, */
 a:focus {
   color: #fbb448;
   outline: none;
@@ -201,9 +201,6 @@ figure {
   color: #fbb448 !important;
 }
 
-#gtco-header {
-  background: #4d4d4d;
-}
 @media screen and (max-width: 992px) {
   #gtco-header.gtco-cover {
     height: inherit !important;
@@ -346,6 +343,7 @@ figure {
   background-position: top center;
   background-repeat: no-repeat;
   position: relative;
+  z-index: 1;
 }
 
 .gtco-bg {
@@ -416,8 +414,42 @@ figure {
   transform: scale(1.2);
 }
 
-.gtco-cover {
+#hero {
+  width: 100%;
   height: 900px;
+  overflow: hidden;
+  position: relative;
+}
+#hero::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 130%;
+  height: 95%;
+  background: linear-gradient(rgba(17, 26, 43, 0.7), rgba(17, 26, 43, 0.7)),
+    url('../images/cook.jpg') center top no-repeat;
+  z-index: 0;
+  border-radius: 0 0 50% 50%;
+  transform: translateX(-50%) rotate(0deg);
+  background-size: cover;
+}
+#hero::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 130%;
+  height: 96%;
+  background: #68a4c4;
+  opacity: 0.3;
+  z-index: 0;
+  border-radius: 0 0 50% 50%;
+  transform: translateX(-50%) translateY(10px) rotate(0deg);
+}
+
+.gtco-cover {
+  /* height: 900px; */
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -462,8 +494,24 @@ figure {
   }
 }
 .gtco-cover.gtco-cover-sm {
-  height: 600px;
+  /* height: 600px; */
+  /* background: linear-gradient(rgba(40, 58, 90, 0.7), rgba(40, 58, 90, 0.7)),
+    url(../images/cook.jpg) center center; */
+  background: linear-gradient(rgba(40, 58, 90, 0.7), rgba(40, 58, 90, 0.7))
+    center center;
+  color: #fff;
+  background-size: cover;
 }
+
+video {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
 @media screen and (max-width: 768px) {
   .gtco-cover.gtco-cover-sm {
     height: 400px;
@@ -1510,7 +1558,6 @@ form label {
 .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-color: #fbb448;
 }
 
 .row-mt-15em {
