@@ -37,3 +37,5 @@ window.onload = () => {
 function load() {
   location.reload();
 }
+
+// blablabla
