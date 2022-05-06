@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -24,12 +25,10 @@ class OffreType extends AbstractType
             ->add('prix', TextType::class, [
                 'label' => 'Prix du plat',
             ])
-            ->add('images', FileType::class, [
-                'label' => 'Image',
-                'multiple' => true,
-                'mapped' => false,
-                'required' => false,
+            ->add('imageFile', VichFileType::class,[
+                'label' => 'Image'
             ])
+
             ->add('save', SubmitType::class, [
                 'label' => 'Créer l\'offre'
             ]);

@@ -99,16 +99,12 @@
 				<div class="row">
 					{% for offre in offres %}
 						<div class="col-lg-4 col-md-4 col-sm-6">
-							{% for image in offre.images %}
-								<a href="{{ asset('/uploads/'~image.name) }}" alt="image" class="fh5co-card-item image-popup">
-								{% endfor %}
+							<a href="{{vich_uploader_asset(offre, 'imageFile')}}" alt="image" class="fh5co-card-item image-popup">
 								<figure>
 									<div class="overlay">
 										<i class="fas fa-plus"></i>
 									</div>
-									{% for image in offre.images %}
-										<img src="{{ asset('/uploads/'~image.name) }}" alt="image" class="img-responsive">
-									{% endfor %}
+									<img src="{{vich_uploader_asset(offre, 'imageFile')}}" alt="image" class="img-responsive">
 								</figure>
 								<div class="fh5co-text">
 									<h2>{{ offre.titre }}</h2>

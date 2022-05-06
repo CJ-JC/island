@@ -1874,6 +1874,10 @@ form label {
   margin: 0 0 10px 0;
   color: #fbb448;
 }
+.fh5co-card-item .fh5co-text h2::first-letter,
+.fh5co-card-item .fh5co-text p::first-letter {
+  text-transform: uppercase;
+}
 .fh5co-card-item .fh5co-text span {
   color: #b3b3b3;
   font-size: 16px;
